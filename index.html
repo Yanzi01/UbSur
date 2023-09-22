@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UbSur App</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script> <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+    <script>
+      mapboxgl.accessToken = 'sk eyJ1IjoieWFuemkxIiwiYSI6ImNsbXYwcnlwZTBlM2wyaW52YjZiaHhlejAifQ.UV-2aBb_eZoBDi5DWe5HkA';
+      var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v11',
+          center: [42.361145, -71.057083],
+          zoom: [0, 4]
+      });
+      var marker = new mapboxgl.Marker()
+            .setLngLat([42.365589, -71.010025])
+            .addTo(map);
+            
+            var popup = new mapboxgl.Popup({ offset: 25 })
+            .setText('Information about this location');
+            marker.setPopup(popup);
+
+  </script>
+  </body>
+</html>
